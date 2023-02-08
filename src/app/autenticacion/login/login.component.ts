@@ -36,8 +36,8 @@ export class LoginComponent {
       let response = await this.autenticacionService.login(email,password);
       response.subscribe((data: ResponseModel) => {
         const user = data.user
+        this.router.navigateByUrl('personajes');
         this.communicationService.emitChange({topic: 'login', msg: user._id});
-        this.router.navigate(['/perfil',user._id]);
       },(error)=> {
         this.toastr.error('Password incorrecto o Email no encontrado');
       });

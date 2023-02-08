@@ -50,6 +50,7 @@
                   <div class="card-avatar">
                       <div *ngIf="user">
                         <img *ngIf="user.foto" class="img" src="{{user.foto}}" />
+                        <img *ngIf="user.foto == ''" class="img" src="assets/img/user.jpg" />
                       </div>
                   </div>
                   <div class="card-body">
