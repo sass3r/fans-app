@@ -35,8 +35,8 @@ export class AutenticacionService {
     return serverResponse;
   }
 
-  logout() {
-    this.sessionStorage.clearStorage();
+  async logout() {
+    await this.sessionStorage.clearStorage();
   }
 
   async getAuthUser() {

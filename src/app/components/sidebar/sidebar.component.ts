@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommunicationService } from 'src/app/shared/services/communication.service';
+import { AutenticacionService } from 'src/app/shared/services/autenticacion.service';
 declare const $: any;
 declare interface RouteInfo {
     path: string;
@@ -21,7 +22,8 @@ export class SidebarComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private communicationService: CommunicationService
+    private communicationService: CommunicationService,
+    private autenticacionService: AutenticacionService
   ) {
     this.showMenu = false;
     this.userId = ""
@@ -48,4 +50,11 @@ export class SidebarComponent implements OnInit {
   perfil() {
     this.router.navigate(['/perfil',this.userId]);
   }
+
+  async logout() {
+    await this.autenticacionService.logout();
+    this.router.navigateByUrl('login');
+    this.communicationService.emitChange({topic:'logout',message:'success'});
+  }
+
 }
