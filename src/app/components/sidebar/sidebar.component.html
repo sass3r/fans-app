@@ -1,0 +1,68 @@
+<div class="logo">
+    <div>
+        <div>
+            <img class="logo-app" src="assets/img/logo.png"/>
+        </div>
+    </div>
+</div>
+<div class="sidebar-wrapper">
+  <div *ngIf="isMobileMenu() && showMenu">
+        <form class="navbar-form">
+        <span class="bmd-form-group">
+        </span>
+        </form>
+        <ul class="nav navbar-nav nav-mobile-menu">
+            <li class="nav-item">
+                <a class="nav-link" (click)="personajes()">
+                    <i class="material-icons">dashboard</i>
+                    <p>
+                        <span>Personajes</span>
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="miListaPersonajes()">
+                  <i class="material-icons">dashboard</i>
+                  <p>
+                      <span>Mi lista</span>
+                  </p>
+              </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="perfil()">
+                <i class="material-icons">dashboard</i>
+                <p>
+                    <span>Perfil</span>
+                </p>
+            </a>
+        </li>
+        </ul>
+  </div>
+  <ul class="nav" *ngIf="!isMobileMenu() && showMenu">
+    <li class="nav-item">
+      <a class="nav-link" (click)="personajes()">
+          <i class="material-icons">dashboard</i>
+          <p>
+              <span>Personajes</span>
+          </p>
+      </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="miListaPersonajes()">
+        <i class="material-icons">dashboard</i>
+        <p>
+            <span>Mi lista</span>
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" (click)="perfil()">
+      <i class="material-icons">dashboard</i>
+      <p>
+          <span>Perfil</span>
+      </p>
+  </a>
+</li>
+
+  </ul>
+</div>

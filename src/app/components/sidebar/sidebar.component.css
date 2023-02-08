@@ -1,0 +1,12 @@
+.brand {
+    margin-left: 15px;
+}
+
+.hide {
+    display: none;
+}
+
+.logo-app {
+  width: 100% !important;
+  height: auto !important;
+}
