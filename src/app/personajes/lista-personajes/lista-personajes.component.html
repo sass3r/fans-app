@@ -1,0 +1,54 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <form [formGroup]="searchForm">
+              <div class="row">
+                <div class="col-md-12">
+                  <mat-form-field>
+                    <input matInput type="text" name="buscar" placeholder="Buscar" formControlName="search"/>
+                  </mat-form-field>
+                </div>
+              </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+          <div *ngFor="let personaje of personajes; index as index" class="col-md-3">
+            <div class="character">
+            <div class="card">
+              <div class="card-header card-header-danger card-header-icon">
+                  <div>
+                    <img src="{{personaje.image}}" />
+                  </div>
+              </div>
+              <div class="card-body">
+                <div>
+                  <p><b>Nombre: </b><b>{{personaje.name}}</b></p>
+                </div>
+                <div>
+                  <p><b>Genero: </b><b>{{personaje.gender}}</b></p>
+                </div>
+                <!--div>
+                  <p><b>Episodios</b></p>
+                  <ul>
+                    <li *ngFor="let episodio of personaje.episode">{{parseNumber(episodio)}}</li>
+                  </ul>
+                </div-->
+                <div>
+                  <p><b>Estado: </b><b>{{personaje.status}}</b></p>
+                </div>
+              </div>
+              <div class="card-footer">
+                  <div>
+                    <button (click)="addCharacter(index)" mat-raised-button [disabled]="personaje.disabled">Agregar a mi lista</button>
+                  </div>
+              </div>
+          </div>
+          </div>
+          </div>
+          <div appIntersectionObserver #intersection="intersection" [class.example-card--is-intersecting]="intersection._isIntersecting" (isIntersecting)="isIntersecting($event)" [isContinuous]="true" class="col-lg-3 col-md-6 col-sm-6">
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+.character {
+  overflow:hidden;
+}
+
+.card {
+  -webkit-transform: translateY(200px);
+  transform: translateY(200px);
+  -webkit-transition: transform 0.2s ease 0s;
+  transition: transform 0.2s ease 0s;
+}
+
+.character:hover .card {
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+mat-form-field {
+  width: 100%;
+  font-size: 18px;
+}

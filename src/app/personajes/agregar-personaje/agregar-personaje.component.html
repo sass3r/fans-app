@@ -1,0 +1,23 @@
+<h5 mat-dialog-title>Agregar a mi lista</h5>
+<hr>
+<div mat-dialog-content>
+  <form [formGroup]="characterForm">
+    <mat-form-field class="example-full-width">
+      <input matInput type="number" name="calificacion" placeholder="Calificacion" min="0" max="5" formControlName="calificacion">
+      <mat-error *ngIf="!characterForm.controls['calificacion'].valid && characterForm.controls['calificacion'].touched">
+        {{errorMessage}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput name="comentario" placeholder="Comentario" formControlName="comentario"></textarea>
+      <mat-error *ngIf="!characterForm.controls['comentario'].valid && characterForm.controls['comentario'].touched">
+        {{errorMessage}}
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close>Cancelar</button>
+  <button mat-raised-button color="primary" (click)="accept()">Aceptar</button>
+</div>
