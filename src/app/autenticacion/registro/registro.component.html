@@ -1,0 +1,70 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div>
+          <div class="grid">
+              <div class="card">
+                  <div class="card-header">
+                      <h4 class="card-title title-card">Registro</h4>
+                  </div>
+                  <div class="card-body">
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+                      <div class="row registro-box">
+                        <div class="col-md-12">
+                          <mat-form-field class="example-full-width">
+                            <input matInput type="text" placeholder="Nombre completo" name="fullName" formControlName="fullName">
+                            <mat-error *ngIf="!registerForm.controls['fullName'].valid && registerForm.controls['fullName'].touched">
+                              {{errorMessage}}
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                      <div class="row registro-box">
+                        <div class="col-md-12">
+                          <mat-form-field class="example-full-width">
+                            <input matInput type="text" placeholder="Nickname" name="nickName" formControlName="nickName">
+                            <mat-error *ngIf="!registerForm.controls['nickName'].valid && registerForm.controls['nickName'].touched">
+                              {{errorMessage}}
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                      <div class="row registro-box">
+                        <div class="col-md-12">
+                          <mat-form-field class="example-full-width">
+                            <input matInput type="email" placeholder="Email" name="email" formControlName="email">
+                            <mat-error *ngIf="!registerForm.controls['email'].valid && registerForm.controls['email'].touched">
+                              {{errorMessage}}
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                      <div class="row registro-box">
+                        <div class="col-md-12">
+                          <mat-form-field class="example-full-width">
+                            <input matInput type="password" placeholder="Password" name="password" formControlName="password">
+                            <mat-error *ngIf="!registerForm.controls['password'].valid && registerForm.controls['password'].touched">
+                              {{errorMessage}}
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                      <div class="row registro-box">
+                        <div class="col-md-12">
+                          <mat-form-field class="example-full-width">
+                            <input matInput type="password" placeholder="Repetir password" name="rePassword" formControlName="rePassword">
+                            <mat-error *ngIf="!registerForm.controls['rePassword'].valid && registerForm.controls['rePassword'].touched">
+                              {{errorMessage}}
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                      <div>
+                        <button class="button-registro" mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Enviar</button>
+                      </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
